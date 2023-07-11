@@ -1,0 +1,27 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mailslurper
+  labels:
+    app.kubernetes.io/name: mailslurper
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: mailslurper
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: mailslurper
+    spec:
+      containers:
+        - name: mailslurper
+          image: oryd/mailslurper:smtps-latest
+          ports:
+            - containerPort: 4436
+              protocol: TCP
+            - containerPort: 4437
+              protocol: TCP
+            - containerPort: 1025
+              protocol: TCP

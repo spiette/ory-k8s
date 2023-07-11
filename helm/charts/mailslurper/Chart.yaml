@@ -1,0 +1,7 @@
+---
+apiVersion: v2
+name: mailslurper
+description: SMTP mail server for developpers
+type: application
+version: 0.0.1
+appVersion: 1.12.1

@@ -1,0 +1,6 @@
+- Send email from within the cluster on the same namespace to mailslurper:1025
+- To access mailslurper web interface, use
+```
+kubectl port-forward service/mailslurper 4436:4436 4437:4437
+```
+and point your browser to https://localhost:4436/
